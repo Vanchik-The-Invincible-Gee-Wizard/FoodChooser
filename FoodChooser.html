@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <style>
+      body{
+        background-color: #D4B895;
+        border: 30px solid #331a00;
+        padding-left: 10px;
+      }
+      h1{
+        text-align: center;
+        color: #003300;
+        font-size: 50px;
+        font-family: Yusei Magic;
+      }
+      p{
+        text-align: center;
+        color: #003300;
+        font-size: 25px;
+        font-family: Yusei Magic;
+      }
+      img{
+        border: 10px solid black;
+      }
+      #message{
+        text-align: center;
+        color: #003300;
+        font-size: 50px;
+        font-family: Yusei Magic;
+      }
+      #button{
+        width: 100px;
+        height: 50px;
+        background-color: #722620;
+        color: #F2BC94;
+        font-size: 25px;
+        font-family: Yusei Magic;
+      }
+      #button:hover{
+        background-color: #F2BC94;
+        color: #722620;
+      }
+      #num1{
+        background-color: white;
+        color: #72262;
+        font-size: 25px;
+        font-style: Yusei Magic;
+      }
+    </style>
+
+    <script>
+    function food()
+    {
+      var x = 2021;
+      var y = document.getElementById("num1").value;
+      y = parseInt(y);
+      var age = x - y;
+      if (age >= 200)
+      {
+        document.getElementById('pic1').innerHTML = " ";
+        document.getElementById('pic2').innerHTML = " ";
+        document.getElementById('pic3').innerHTML = " ";
+        document.getElementById("message").innerHTML = "Age: " + age + " Error.";
+      }
+      else if (age < 0)
+      {
+        document.getElementById('pic1').innerHTML = " ";
+        document.getElementById('pic2').innerHTML = " ";
+        document.getElementById('pic3').innerHTML = " ";
+        document.getElementById("message").innerHTML = "Age: " + age + " Error.";
+      }
+      else if (age > 10)
+      {
+        document.getElementById("pic1").innerHTML = "<img src = 'burrito.jpg' height='200px' width ='230px' onclick = 'Yes()'>";
+        document.getElementById("pic2").innerHTML = "<img src = 'whipped.jpg' height='200px' width ='200px' onclick = 'No()'>";
+        document.getElementById("pic3").innerHTML = "<img src = 'burger.jpeg' height='200px' width ='250px' onclick = 'Yes()'>";
+      }
+      else if (age <= 10)
+      {
+        document.getElementById("pic1").innerHTML = "<img src = 'queso.jpg' height='200px' width ='190px' onclick = 'Yes()'>";
+        document.getElementById("pic2").innerHTML = "<img src = 'mnm.jpg' height='200px' width ='200px' onclick = 'No()'>";
+        document.getElementById("pic3").innerHTML = "<img src = 'pasta.jpg' height='200px' width ='200px' onclick = 'Yes()'>";
+      }
+    }
+    function Yes()
+    {
+      document.getElementById('message').innerHTML = "Yes, this is a healthy meal.";
+    }
+    function No()
+    {
+      document.getElementById('message').innerHTML = "No this not a healthy meal.";
+    }
+    </script>
+  </head>
+    <body>
+      <h1>The Marvelous Wonderous Grandiose Food Chooser of Greatness</h1> <hr>
+       <p>This is where you find marvelous wonderous grandiose food of much greatness.</p>
+       <input type = "text" value = "Enter Year of Birth" id = "num1">
+       <input type = "button" value = "Done" onclick = "food()" id = "button">
+       <table>
+         <tr>
+           <td></td>
+           <p id = "pic1"></p>
+           <p id = "pic2"></p>
+           <p id = "pic3"></p><br>
+         </tr>
+       </table>
+       <p id = "message"></p> <br>
+    </body>
+</html>
